@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion — Mon Coach TCF+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <main class="auth-layout">
+    <section class="auth-panel">
+      <a class="brand" href="index.html"><span class="brand-mark">T</span><span>tcf<span>+</span></span></a>
+      <div class="form-wrap">
+        <p class="eyebrow">VOTRE ESPACE PERSONNEL</p>
+        <h1 id="formTitle">Bon retour parmi nous</h1>
+        <p class="lead" id="formLead">Connectez-vous pour retrouver votre plan d'entraînement personnalisé.</p>
+
+        <div class="tabs" role="tablist"><button class="tab active" data-view="login">Connexion</button><button class="tab" data-view="signup">Inscription</button></div>
+
+        <div class="notice" id="configNotice" hidden><span>i</span><p>Supabase n'est pas encore configuré. Ajoutez vos clés publiques dans <code>supabase-config.js</code> pour activer la connexion.</p></div>
+        <div class="message" id="message" role="status" hidden></div>
+
+        <form id="loginForm" class="auth-form">
+          <label>E-mail<input type="email" name="email" autocomplete="email" placeholder="vous@exemple.com" required></label>
+          <label>Mot de passe<div class="password-field"><input type="password" name="password" autocomplete="current-password" placeholder="Votre mot de passe" required><button type="button" class="show-password" aria-label="Afficher le mot de passe">◉</button></div></label>
+          <button class="link-button" type="button" id="forgotButton">Mot de passe oublié ?</button>
+          <button class="submit" type="submit">Se connecter <span>→</span></button>
+        </form>
+
+        <form id="signupForm" class="auth-form" hidden>
+          <div class="names"><label>Prénom<input type="text" name="firstName" autocomplete="given-name" placeholder="Amélie" required></label><label>Nom ou pseudo<input type="text" name="lastName" autocomplete="family-name" placeholder="Laurent" required></label></div>
+          <label>E-mail<input type="email" name="email" autocomplete="email" placeholder="vous@exemple.com" required></label>
+          <label>Mot de passe<div class="password-field"><input type="password" name="password" autocomplete="new-password" minlength="8" placeholder="8 caractères minimum" required><button type="button" class="show-password" aria-label="Afficher le mot de passe">◉</button></div></label>
+          <p class="terms">En créant un compte, vous acceptez nos conditions d'utilisation et notre politique de confidentialité.</p>
+          <button class="submit" type="submit">Créer mon compte <span>→</span></button>
+        </form>
+
+        <form id="resetForm" class="auth-form" hidden>
+          <p class="reset-copy">Indiquez votre adresse e-mail. Nous vous enverrons un lien pour choisir un nouveau mot de passe.</p>
+          <label>E-mail<input type="email" name="email" autocomplete="email" placeholder="vous@exemple.com" required></label>
+          <button class="submit" type="submit">Envoyer le lien <span>→</span></button>
+          <button class="link-button center" type="button" data-view="login">Retour à la connexion</button>
+        </form>
+
+        <div class="divider"><span>ou continuer avec</span></div>
+        <div class="socials"><button class="social" data-provider="google"><b class="google">G</b> Google</button><button class="social" data-provider="facebook"><b class="facebook">f</b> Facebook</button></div>
+        <button class="demo" id="demoButton">Découvrir le tableau de bord en démo</button>
+      </div>
+      <p class="back"><a href="index.html">← Retour au tableau de bord</a><button id="logoutButton" hidden>Se déconnecter</button></p>
+    </section>
+    <aside class="visual-panel">
+      <div class="quote"><span>✦</span><blockquote>« Chaque activité vous rapproche d'une réponse plus claire, plus précise et plus confiante. »</blockquote><p>— Votre Coach TCF</p></div>
+      <div class="floating-card"><div class="card-head"><span>AUJOURD'HUI</span><b>Votre priorité</b></div><div class="mini-activity"><i>◒</i><div><b>Expression orale</b><small>Développer un argument</small></div><em>15 min</em></div><div class="mini-progress"><span>Préparation TCF Canada</span><b>58%</b><i><u></u></i></div></div>
+    </aside>
+  </main>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

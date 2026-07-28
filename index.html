@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Coach TCF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="navigation.css" />
+  <link rel="stylesheet" href="exam-header.css" />
+  <link rel="stylesheet" href="dashboard-reference.css" />
+</head>
+<body>
+  <header class="exam-masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="#" aria-label="TCF Plus, accueil"><span class="brand-mark">T</span><span>tcf<span>+</span></span></a>
+      <div class="masthead-title"><span>Bienvenue sur la plateforme TCF Canada</span><strong>Préparation TCF Canada</strong><small>4 épreuves · stratégies · simulations</small></div>
+      <div class="masthead-actions"><a href="epreuves.html" class="utility-link">Simulateurs</a><a href="#sujets" class="utility-link">Sujets TCF</a><a href="auth.html" class="account-link">Mon compte</a></div>
+    </div>
+  </header>
+  <nav class="topbar" aria-label="Navigation des épreuves TCF Canada">
+    <div class="topbar-inner">
+      <a class="home-link" href="#" aria-label="Accueil">⌂ <span>Accueil</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="epreuves.html?skill=writing" class="exam-nav writing-nav"><i>✎</i> Expression écrite</a>
+        <a href="epreuves.html?skill=speaking" class="exam-nav speaking-nav"><i>◒</i> Expression orale</a>
+        <a href="epreuves.html?skill=reading" class="exam-nav reading-nav"><i>▤</i> Compréhension écrite</a>
+        <a href="epreuves.html?skill=listening" class="exam-nav listening-nav"><i>◖</i> Compréhension orale</a>
+        <a href="#performance">Simulateurs</a><a href="#sujets">Sujets</a><a href="#progress">Progression</a>
+      </div>
+      <div class="top-actions"><button class="search-button" aria-label="Rechercher">⌕</button><button class="bell" aria-label="Notifications">♧<em></em></button><a class="profile" href="auth.html" aria-label="Gérer mon compte"><div class="avatar">AL</div><span>Amélie</span><b>⌄</b></a></div>
+    </div>
+  </nav>
+
+  <main>
+    <header><div class="crumb">PRÉPARATION TCF CANADA <span>/</span> <b>TABLEAU DE BORD</b></div><p class="header-status"><i></i> Parcours d'examen personnalisé actif</p></header>
+
+    <div class="dashboard-hero"><section class="hero" id="coach">
+      <div><p class="eyebrow">DIMANCHE 26 JUILLET</p><h1>Bonjour, Amélie <span>👋</span></h1><p class="intro">Prête à franchir un nouveau cap aujourd'hui ?</p></div>
+      <div class="objective"><span class="objective-icon">◎</span><div><small>OBJECTIF ACTUEL</small><strong id="objectiveText">Atteindre le niveau B2</strong></div><button id="objectiveButton" aria-label="Modifier l'objectif">⌄</button><div class="objective-menu" id="objectiveMenu"><button>Atteindre le niveau B1</button><button>Atteindre le niveau B2</button><button>Atteindre le niveau C1</button><button>Améliorer mon score</button><button>Me préparer à l'examen</button></div></div>
+    </section>
+
+    <section class="coach-card" id="sujets">
+      <div class="coach-top"><span class="coach-label"><b>✦</b> VOTRE PRIORITÉ D'ÉPREUVE</span><span class="personalized">Analyse de vos résultats TCF</span></div>
+      <div class="coach-body"><div class="coach-copy"><div class="priority-icon">◒</div><div><h2 id="priorityTitle">Expression orale</h2><p id="priorityReason">Vous avez récemment rencontré des difficultés à développer vos arguments et à utiliser les connecteurs logiques.</p></div></div><div class="recommended"><small>ACTIVITÉ RECOMMANDÉE</small><strong id="activityName">Développer un argument avec un exemple concret</strong><span id="activityTime">15 min · Niveau B1+</span></div><button class="primary" id="startButton">Commencer maintenant <span>→</span></button></div>
+      <div class="coach-footer"><span>Pourquoi cette activité ?</span><p id="whyText">Votre dernière réponse était intéressante, mais vos idées manquaient d'organisation. Cette activité vous aidera à structurer vos réponses pour gagner des points au TCF.</p></div>
+    </section></div>
+
+    <section class="overview" id="epreuves">
+      <div class="section-heading"><div><p class="eyebrow">LES 4 ÉPREUVES OBLIGATOIRES</p><h2>Préparez chaque épreuve du TCF Canada</h2></div><a href="#progress">Voir ma progression <span>→</span></a></div>
+      <div class="skill-grid" id="skillGrid"></div>
+    </section>
+
+    <div class="two-col" id="progress">
+      <section class="panel strengths"><div class="section-heading compact"><div><p class="eyebrow">ANALYSE IA</p><h2>Mon profil de compétences</h2></div><button class="more">•••</button></div><div class="legend"><span><i class="dot teal"></i>Votre niveau</span><span><i class="dot pale"></i>Objectif B2</span></div><div class="bars" id="profileBars"></div><p class="insight"><span>✦</span> Votre plus grand levier de progression est <b>l'argumentation</b>. En travaillant cette compétence, vous pourriez gagner jusqu'à 12 points à l'oral.</p></section>
+      <section class="panel plan" id="plan"><div class="section-heading compact"><div><p class="eyebrow">AUJOURD'HUI</p><h2>Mon plan du jour</h2></div><span class="count" id="planCount">1 / 4 terminée</span></div><div class="plan-list" id="planList"></div><div class="plan-progress"><span><b id="progressNumber">25</b>% terminé</span><div><i id="planProgress"></i></div></div></section>
+    </div>
+
+    <section class="prep-section"><div class="prep-copy"><p class="eyebrow">PRÉPARATION GLOBALE</p><h2>Votre préparation au TCF Canada</h2><p>Vous êtes sur la bonne voie. Continuez à renforcer l'expression orale pour atteindre votre objectif B2.</p><button class="outline">Voir mon rapport complet <span>→</span></button></div><div class="score-wrap"><div class="score-ring"><div><b>58<sup>%</sup></b><small>PRÉPARATION</small></div></div><div class="level-pill">Niveau actuel <b>B1+</b></div></div><div class="cycle"><p>VOTRE CYCLE D'APPRENTISSAGE</p><div><span>Diagnostiquer</span><b>→</b><span>Apprendre</span><b>→</b><span>Pratiquer</span><b>→</b><span>Corriger</span><b>→</b><span>Progresser</span></div></div></section>
+
+    <div class="bottom-grid" id="performance"><section class="panel recent"><div class="section-heading compact"><div><p class="eyebrow">DERNIÈRES ACTIVITÉS</p><h2>Mes performances</h2></div><a href="#">Tout voir</a></div><div id="performanceList"></div></section><section class="panel week"><p class="eyebrow">CETTE SEMAINE</p><h2>Une belle régularité !</h2><div class="week-stat"><b>5</b><span>jours consécutifs<br><em>Votre meilleure série : 8 jours</em></span></div><div class="week-numbers"><div><b>3h20</b><span>d'entraînement</span></div><div><b>12</b><span>activités terminées</span></div><div><b>+7%</b><span>progression moyenne</span></div></div></section></div>
+  </main>
+  <div class="toast" id="toast">Activité lancée — bon entraînement !</div>
+  <script src="script.js"></script>
+</body>
+</html>
